@@ -64,16 +64,14 @@ void main()
 {
     //making all elements of the solution matrix 0
     	int i,j;
-	printf("Enter maze[Use only 0 or 1 | 1 are the blocks]:\n");
+yyo:	printf("Enter maze[Use only 0 or 1 | 1 are the blocks]:\n");
 	int maze[SIZE][SIZE],solution[SIZE][SIZE];
-	for(i=0;i<SIZE;i++)
-	{
-		for(j=0;j<SIZE;j++)
-		{
-			scanf("%d ",&maze[i][j]);
-		}
-	}
-
+        for(int i=0;i<SIZE;i++)
+                for(int j=0;j<SIZE;j++)
+                {
+                        printf("maze[%d][%d]: ",i+1,j+1);
+                        scanf("%d",&maze[i][j]);
+                }
 yo:	printf("\nThe maze is:\n");
 	for(i=0;i<SIZE;i++)
 	{
