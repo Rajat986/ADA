@@ -1,0 +1,64 @@
+#include<stdio.h>
+#include<time.h>
+
+void main()
+{
+    clock_t start,end,tt;
+    start=clock();
+    void towerOfHanoi(int,char,char,char);
+    int n;
+    printf("Enter number of plates: ");
+    scanf("%d",&n);
+    towerOfHanoi(n, 'A', 'C', 'B');
+    printf("\n");
+    end=clock();
+    tt=(double)(end-start);
+    printf("\nStart: %ld\nEnd: %ld\nTotal Time: %ld\n",start,end,tt);
+}
+
+void towerOfHanoi(int n, char from_rod, char to_rod, char aux_rod)
+{
+    if (n == 1)
+    {
+        printf("\n Move disk 1 from rod %c to rod %c", from_rod, to_rod);
+        return;
+    }
+    towerOfHanoi(n-1, from_rod, aux_rod, to_rod);
+    printf("\n Move disk %d from rod %c to rod %c", n, from_rod, to_rod);
+    towerOfHanoi(n-1, aux_rod, to_rod, from_rod);
+}
+
+1.Input:
+    Enter number of plates: 5
+  Output:
+    Move disk 1 from rod A to rod C
+    Move disk 2 from rod A to rod B
+    Move disk 1 from rod C to rod B
+    Move disk 3 from rod A to rod C
+    Move disk 1 from rod B to rod A
+    Move disk 2 from rod B to rod C
+    Move disk 1 from rod A to rod C
+    Move disk 4 from rod A to rod B
+    Move disk 1 from rod C to rod B
+    Move disk 2 from rod C to rod A
+    Move disk 1 from rod B to rod A
+    Move disk 3 from rod C to rod B
+    Move disk 1 from rod A to rod C
+    Move disk 2 from rod A to rod B
+    Move disk 1 from rod C to rod B
+    Move disk 5 from rod A to rod C
+    Move disk 1 from rod B to rod A
+    Move disk 2 from rod B to rod C
+    Move disk 1 from rod A to rod C
+    Move disk 3 from rod B to rod A
+    Move disk 1 from rod C to rod B
+    Move disk 2 from rod C to rod A
+    Move disk 1 from rod B to rod A
+    Move disk 4 from rod B to rod C
+    Move disk 1 from rod A to rod C
+    Move disk 2 from rod A to rod B
+    Move disk 1 from rod C to rod B
+    Move disk 3 from rod A to rod C
+    Move disk 1 from rod B to rod A
+    Move disk 2 from rod B to rod C
+    Move disk 1 from rod A to rod C
