@@ -1,0 +1,117 @@
+#include<stdio.h>
+#include<time.h>
+void main()
+{
+        clock_t start,end,tt;
+        start=clock();
+        void mergesort(int [],int,int);
+        int n,i;
+        printf("Enter size of the array: ");
+        scanf("%d",&n);
+        int a[n];
+        printf("Enter array elements:\n");
+        for(i=0;i<n;i++)
+                scanf("%d",&a[i]);
+
+        printf("Array before sorting  : ");
+        for(i=0;i<n;i++)
+                printf("%d ",a[i]);
+        printf("\n");
+
+        mergesort(a,0,n-1);
+
+        printf("Array after merge sort: ");
+        for(i=0;i<n;i++)
+                printf("%d ",a[i]);
+        printf("\n");
+
+        end=clock();
+        tt=(double)(end-start);
+        printf("\nStart: %ld\nEnd: %ld\nTotal Time: %ld\n",start,end,tt);
+}
+
+void mergesort(int a[],int l,int r)
+{
+        void merge(int [],int,int,int);
+        if(l<r)
+        {
+                int mid=(l+r)/2;
+                mergesort(a,l,mid);
+                mergesort(a,mid+1,r);
+
+                merge(a,l,mid,r);
+        }
+}
+
+void merge(int a[],int l,int mid,int r)
+{
+
+        int i, j, k;
+        int n1 = mid - l + 1;
+        int n2 =  r - mid;
+
+        int L[n1], R[n2];
+        for (i = 0; i < n1; i++)
+                L[i] = a[l + i];
+        for (j = 0; j < n2; j++)
+                R[j] = a[mid + 1+ j];
+
+        i = 0;
+        j = 0;
+        k = l;
+        while(i < n1 && j < n2)
+        {
+                if (L[i] <= R[j])
+                {
+                        a[k] = L[i];
+                        i++;
+                }
+                else
+                {
+                        a[k] = R[j];
+                        j++;
+                }
+                k++;
+        }
+
+    while (i < n1)
+    {
+        a[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2)
+    {
+        a[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+1.Input:
+    Enter size of the array: 5
+    Enter array elements:
+    23
+    546
+    -23
+    -45456
+    234
+  Output:
+    Array before sorting  : 23 546 -23 -45456 234 
+    Array after merge sort: -45456 -23 23 234 546 
+    
+2.Input:
+    Enter size of the array: 8
+    Enter array elements:
+    45
+    45
+    455
+    568
+    568456
+    7
+    547456
+    7
+  Output:
+    Array before sorting  : 45 45 455 568 568456 7 547456 7 
+    Array after merge sort: 7 7 45 45 455 568 547456 568456 
