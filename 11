@@ -22,7 +22,11 @@ void print(int i,int j)
 void lcs()
 {
                 m=strlen(x);
-                n=strlen(y);
+           Enter 1st sequence:asdasdf
+Enter 2nd sequence:sdvfsdf
+
+The Longest Common Subsequence is sdsdf
+     n=strlen(y);
                 for(i=0;i<=m;i++)
                                 c[i][0]=0;
                 for(i=0;i<=n;i++)
@@ -36,7 +40,11 @@ void lcs()
                                                 {
                                                                 c[i][j]=c[i-1][j-1]+1;
                                                                 b[i][j]='c';
-                                                }
+           Enter 1st sequence:asdasdf
+Enter 2nd sequence:sdvfsdf
+
+The Longest Common Subsequence is sdsdf
+                                     }
                                                 else if(c[i-1][j]>=c[i][j-1])
                                                 {
                                                                 c[i][j]=c[i-1][j];
@@ -68,3 +76,16 @@ void main()
                 printf("\nStart: %ld\nEnd: %ld\nTotal Time: %ld\n",start,end,tt);
 }
 
+1.Input:
+    Enter 1st sequence:asdasdf
+    Enter 2nd sequence:sdvfsdf
+  
+  Output:
+    The Longest Common Subsequence is sdsdf
+
+2.Input:
+    Enter 1st sequence:fdgdfghg
+    Enter 2nd sequence:hjgkfgh
+    
+  Output:
+    The Longest Common Subsequence is gfgh
