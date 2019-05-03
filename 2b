@@ -115,5 +115,6 @@ int BinarySearch(int a[],int key,int l,int h)
     3
     6
     9
+  Output:
     Enter the key element: 0
     Element NOT found!!!
