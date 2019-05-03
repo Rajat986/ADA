@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<time.h>
+void main()
+{
+        int fact(int);
+        clock_t start,end,totaltime;
+        start=clock();
+
+        int n,r;
+        float p,c;
+yo:     printf("Enter values of 'n' and 'r':\n");
+        scanf("%d %d",&n,&r);
+        if(n < r || n == 0)
+        {
+                printf("Enter valid values for 'n' or 'r' !!!\n");
+                goto yo;
+        }
+
+        p=fact(n)/fact(n-r);
+        c=fact(n)/(fact(r)*fact(n-r));
+        printf("Permutation: %f\n",p);
+        printf("Combination: %f\n",c);
+        end=clock();
+        totaltime=(double)(end-start);
+        printf("Start: %ld\nEnd: %ld\n",start,end);
+        printf("Total Time: %ld\n",totaltime);
+}
+
+int fact(int n)
+{
+        if(n==0 || n==1)
+        {
+                return 1;
+        }
+        int f=1;
+        for(int i=1;i<=n;i++)
+        {
+                f=f*i;
+        }
+        return f;
+}
+
+
+1.Input:
+   Enter values of 'n' and 'r':
+   10
+   3
+  Output:
+   Permutation: 720.000000
+   Combination: 120.000000
+
+2.Input:
+   Enter values of 'n' and 'r':
+   12
+   10
+   Permutation: 239500800.000000
+   Combination: 66.000000
