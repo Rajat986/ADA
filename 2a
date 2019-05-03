@@ -97,3 +97,18 @@ int LinearSearch(int a[],int key, int n)
   Output:
     Enter the key element: 8
     Element NOT found!!!
+    
+2.Input:
+    Enter size of the array: 8
+    Enter array elements:
+    34
+    45
+    76
+    78
+    8
+    45
+    34
+    78
+  Output:
+    Enter the key element: 4
+    Element NOT found!!!
